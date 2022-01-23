@@ -1,0 +1,366 @@
+.recentp_container {
+  width: 100%;
+}
+.recentp_slide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .recentp_wrapper {
+    width: 100%;
+    display: flex;
+    .recentp_box {
+      height: 80vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin: auto;
+      .recentp_content {
+        width: 100%;
+        overflow: hidden;
+        padding: 0rem 1rem;
+        .recentp_text {
+          opacity: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: all 500ms ease-in;
+          text-align: center;
+          transform: translateY(49%);
+          p {
+            font-family: "Century Gothic";
+            margin-bottom: auto;
+          }
+          h2 {
+            font-family: "Kudryashev Headline Sans Web";
+            font-size: 3rem;
+          }
+        }
+        .recentp_description {
+          background-color: #ffffff;
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin-top: 2rem;
+          padding: 1rem;
+          font-family: "Century Gothic";
+          font-weight: bolder;
+          color: black;
+          transition: transform 400ms ease-in;
+          transform: translateY(99%);
+        }
+      }
+      .recentp_img {
+        width: 100%;
+        display: flex;
+        position: relative;
+        .reverse {
+          flex-direction: row-reverse;
+        }
+        .grid {
+          position: relative;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          width: 100%;
+          list-style: none;
+        }
+        .grid figure {
+          position: relative;
+          float: left;
+          overflow: hidden;
+          min-width: 50%;
+          height: 100%;
+          width: 48%;
+          height: auto;
+          background: #3085a3;
+          text-align: center;
+          cursor: pointer;
+        }
+
+        .grid figure img {
+          position: relative;
+          // display: block;
+          min-height: 100%;
+          max-width: 100%;
+          opacity: 0.8;
+        }
+
+        .grid figure figcaption {
+          padding: 2em;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 1.25em;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+
+        .grid figure figcaption::before,
+        .grid figure figcaption::after {
+          pointer-events: none;
+        }
+
+        .grid figure figcaption,
+        .grid figure figcaption > a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .grid figure figcaption > a {
+          z-index: 1000;
+          text-indent: 200%;
+          white-space: nowrap;
+          font-size: 0;
+          opacity: 0;
+        }
+
+        .grid figure h2 {
+          word-spacing: -0.15em;
+          font-weight: 300;
+        }
+
+        .grid figure h2 span {
+          font-weight: 800;
+        }
+
+        .grid figure h2,
+        .grid figure p {
+          margin: 0;
+        }
+
+        .grid figure p {
+          letter-spacing: 1px;
+          font-size: 68.5%;
+        }
+        .content {
+          margin: 0 auto;
+          max-width: 1000px;
+        }
+
+        .content > h2 {
+          clear: both;
+          margin: 0;
+          padding: 4em 1% 0;
+          color: #484b54;
+          font-weight: 800;
+          font-size: 1.5em;
+        }
+
+        .content > h2:first-child {
+          padding-top: 0em;
+        }
+
+        figure.effect-apollo.grow {
+          height: 100%;
+        }
+        figure.effect-apollo {
+          background: #3498db;
+          overflow: hidden;
+          height: 1%;
+          transition: all 1s ease-out;
+        }
+
+        figure.effect-apollo img {
+          opacity: 0.95;
+          -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.35s, transform 0.35s;
+          -webkit-transform: scale3d(1.05, 1.05, 1);
+          transform: scale3d(1.05, 1.05, 1);
+        }
+
+        figure.effect-apollo figcaption::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.5);
+          content: "";
+          -webkit-transition: -webkit-transform 0.6s;
+          transition: transform 0.6s;
+          -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+            translate3d(0, -100%, 0);
+          transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+            translate3d(0, -110%, 0);
+        }
+
+        figure.effect-apollo p {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          margin: 3em;
+          padding: 0 1em;
+          max-width: 150px;
+          border-right: 4px solid #fff;
+          text-align: right;
+          opacity: 0;
+          -webkit-transition: opacity 0.35s;
+          transition: opacity 0.35s;
+        }
+
+        figure.effect-apollo h2 {
+          -webkit-transition: opacity 0.35s;
+          transition: opacity 0.35s;
+          opacity: 0;
+          text-align: left;
+        }
+
+        figure.effect-apollo:hover img {
+          opacity: 0.2;
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+        }
+
+        figure.effect-apollo:hover figcaption::before {
+          -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+            translate3d(0, 110%, 0);
+          transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+            translate3d(0, 110%, 0);
+        }
+
+        figure.effect-apollo:hover p,
+        figure.effect-apollo:hover h2 {
+          opacity: 1;
+          -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+        }
+
+        .name_recentp {
+          position: absolute;
+          top: auto;
+          right: 0%;
+          bottom: -40px;
+          color: white;
+          width: 100%;
+        }
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
+      &:hover {
+        .recentp_description {
+          transform: translateY(0px);
+        }
+        .recentp_text {
+          opacity: 1;
+          margin: auto;
+          background-color: rgba(19, 25, 37, 0.9);
+          transform: translateY(0px);
+          h2 {
+            margin-top: auto;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .recentp_container {
+    margin-top: 50vh;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .grid {
+    flex-direction: column;
+  }
+  .grid figure {
+    width: 100% !important;
+  }
+  .recentp_text {
+    position: absolute;
+    inset: 0 0 0 0;
+    height: 100%;
+    h2 {
+      margin-top: auto;
+    }
+  }
+  .reverse {
+    flex-direction: column !important;
+  }
+}
+@media (max-width: 850px) {
+  .recentp_container {
+    margin-top: 30vh;
+  }
+}
+@media (max-width: 650px) {
+  .recentp_container {
+    margin-top: 15vh;
+  }
+  .recentp_box {
+    height: auto;
+  }
+}
+@media (max-width: 800px) {
+  .recentp_container {
+    width: 100%;
+    height: 62vh;
+    display: flex;
+    justify-content: center;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .see-more_content__item {
+      transform: translate(-150%, 30%);
+    }
+    .see-more_link {
+      font-size: 1rem;
+    }
+  }
+  .recentp_slide {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    margin: auto;
+    .recentp_wrapper {
+      flex: 1 0 100%;
+      .recentp_box {
+        width: 100%;
+        transform: translateY(-14%);
+        height: auto;
+        margin: 0.5rem 0.5rem;
+        .recentp_description {
+          transform: translateY(-10px) !important;
+          padding: 0.5rem !important;
+        }
+        .recentp_text {
+          font-size: 12px;
+          h2 {
+            font-size: 2rem !important;
+          }
+        }
+      }
+    }
+  }
+  figure.effect-apollo {
+    height: 100% !important;
+  }
+}
+
+    @media (max-width: 400px) {
+      .recentp_wrapper {
+        .recentp_box {
+          width: 100% !important;
+          transform: translateY(-14%);
+          height: auto;
+          margin: 0.5rem .5rem !important;
+          .recentp_description {
+            transform: translateY(-10px) !important;
+            padding: 0.5rem !important;
+          }
+          .recentp_text {
+            font-size: 12px;
+            h2 {
+              font-size: 2rem !important;
+            }
+          }
+        }
+      }
+    }

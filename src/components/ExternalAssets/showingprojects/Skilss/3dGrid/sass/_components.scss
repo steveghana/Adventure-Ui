@@ -1,0 +1,276 @@
+//========== SLIDER ==========
+.slider {
+  max-width: 144rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 48.4%;
+  background-position: bottom 0px right 7.3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  @include respond(tablet-landscape) {
+    background-size: 48%;
+  }
+
+  @include respond(tablet-portrait) {
+    padding: 0;
+    background-position: top center;
+    background-size: 62% auto;
+  }
+
+  @include respond(small-tablet) {
+    background-size: 75% auto;
+  }
+
+  @include respond(mobile) {
+    background-size: 100% auto;
+  }
+
+  &__slides {
+    width: 100%;
+    display: flex;
+    @include respond(tablet-portrait) {
+    }
+  }
+
+  &__slide {
+    flex: 1 0 100%;
+    display: flex;
+    margin-right: 21.5rem;
+
+    @include respond(tablet-portrait) {
+    }
+  }
+
+  &__slide-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tablet-portrait) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  &__buttons {
+    box-shadow: var(--box-shadow-2);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    position: absolute;
+    width: 100%;
+    z-index: 6;
+
+    @include respond(tablet-landscape) {
+      padding: 0rem;
+    }
+
+    @include respond(tablet-portrait) {
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    @include respond(small-tablet) {
+    }
+
+    @include respond(mobile) {
+      width: 15rem;
+      height: 4rem;
+      top: 20%;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    color: #fca53c;
+
+    &--prev {
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+
+    &--next {
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+//========== TESTIMONIAL ==========
+.testimonial {
+  width: 70%;
+  display: flex;
+  margin: auto;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  @include respond(tablet-portrait) {
+    width: 100%;
+  }
+  @include respond(mobile) {
+    flex-direction: column-reverse;
+  }
+  &__text {
+    color: white;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1rem;
+    @include respond(tablet-portrait) {
+      align-items: center;
+    }
+
+    @include respond(mobile) {
+    }
+
+    @include respond(small-mobile) {
+      // margin-top: 5rem;
+    }
+  }
+
+  &__quotation-marks {
+    position: absolute;
+    top: -6.5rem;
+    left: 9.5rem;
+
+    @include respond(tablet-portrait) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include respond(mobile) {
+      width: 6rem;
+      height: 5rem;
+      top: -2.5rem;
+    }
+
+    @include respond(small-mobile) {
+      width: 4rem;
+      height: auto;
+      top: -1rem;
+    }
+  }
+
+  &__quote {
+    font-size: 1.2rem;
+    font-weight: 300;
+
+    // line-height: 1.375;
+    padding-right: 3rem;
+    text-transform: none;
+    // margin-bottom: 3.2rem;
+
+    @include respond(tablet-landscape) {
+      font-size: 1rem;
+      // padding-right: 2rem;
+    }
+
+    @include respond(tablet-portrait) {
+      font-size: 1rem;
+      padding-right: 1rem;
+    }
+
+    @include respond(small-tablet) {
+      font-size: 0.8rem;
+    }
+
+    @include respond(mobile) {
+      font-size: 11px;
+      // margin-bottom: 1.9rem;
+    }
+
+    @include respond(small-mobile) {
+      font-size: 11px;
+      // margin-bottom: 1.5rem;
+    }
+  }
+
+  &__cite {
+    font-size: 2.9rem;
+    font-style: normal;
+
+    @include respond(tablet-landscape) {
+      font-size: 2.2rem;
+    }
+
+    @include respond(tablet-portrait) {
+      font-size: 2.2rem;
+    }
+
+    @include respond(tablet-portrait) {
+      font-size: 2.2rem;
+      line-height: 1.5;
+    }
+
+    @include respond(mobile) {
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+
+    @include respond(small-mobile) {
+      font-size: 1.2rem;
+    }
+
+    &--name {
+      font-weight: 700;
+
+      margin-right: 8px;
+      font-family: "Kudryashev Headline Sans Web";
+      // font-size: 2rem;
+      @include respond(tablet-landscape) {
+        // margin-right: 0;
+        // display: block;
+      }
+    }
+
+    &--role {
+      color: var(--grayish-blue);
+    }
+  }
+
+  &__img {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    img {
+      // object-fit: scale-down;
+      width: 50%;
+      height: 50%;
+      margin: auto;
+    }
+    @include respond(tablet-portrait) {
+      flex: initial;
+    }
+
+    @include respond(small-tablet) {
+    }
+
+    @include respond(mobile) {
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 5px;
+
+    @include respond(tablet-portrait) {
+      width: 100%;
+    }
+  }
+}

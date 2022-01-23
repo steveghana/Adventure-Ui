@@ -1,0 +1,79 @@
+.bg_patterns {
+  position: absolute;
+  top: 30%;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0%;
+  opacity: 0.05;
+  right: 0%;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  z-index: 0;
+}
+.bg_svg_wrapper {
+  height: 100%;
+  flex: 1 0 100%;
+}
+.bg_svg_wrapper .bg_svg_text {
+  font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+  stroke: #fffbfb;
+  letter-spacing: 10px;
+  font-size: 45rem;
+  font-weight: 700;
+  stroke-width: 2;
+  -webkit-animation: textAnimate 7s infinite alternate;
+  animation: textAnimate 7s infinite alternate;
+}
+
+@-webkit-keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: rgba(148, 222, 235, 0);
+  }
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: rgba(148, 222, 235, 0);
+  }
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: rgba(148, 222, 235, 0);
+  }
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: rgba(148, 222, 235, 0);
+  }
+}
+@media (max-width: 1025px) {
+  .bg_patterns {
+    top: 10%;
+  }
+  .bg_svg_wrapper .bg_svg_text {
+    font-size: 25rem;
+  }
+}
+@media (max-width: 770px) {
+  .bg_patterns {
+    top: 7%;
+  }
+  .bg_svg_wrapper .bg_svg_text {
+    font-size: 20rem;
+  }
+}
+@media (max-width: 430px) {
+  .bg_patterns {
+    top: -15%;
+  }
+  .bg_svg_wrapper .bg_svg_text {
+    font-size: 10rem;
+  }
+}

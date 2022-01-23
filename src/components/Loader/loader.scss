@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main_loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // position: absolute;
+  width: 100vw;
+}
+
+.loader_svg {
+  height: 15%;
+  width: 15%;
+}
