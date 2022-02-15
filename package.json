@@ -27,6 +27,7 @@
     "react-scripts": "4.0.3",
     "sass": "^1.43.4",
     "splitting": "^1.0.6",
+    "swiper": "^8.0.6",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

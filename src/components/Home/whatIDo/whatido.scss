@@ -14,18 +14,14 @@
     pointer-events: none;
   }
   .icon {
-    display: block;
     width: 4.5em;
     height: 4.5em;
-    margin: 0 auto;
+    margin-right: auto;
     fill: currentColor;
   }
   .nav {
-    position: absolute;
     left: 0%;
     background: none;
-    width: auto;
-    height: auto;
     z-index: 1000;
     border: 0;
     padding: 0;
@@ -36,7 +32,7 @@
   }
   .nav--next {
     bottom: 1rem;
-    right: 1rem;
+    left: 1rem;
   }
   .icon--navarrow-next {
     transform: rotate(-45deg);
@@ -72,10 +68,11 @@
         position: relative;
         display: flex;
         align-items: flex-end;
-        justify-content: flex-end;
+        justify-content: space-between;
         .skill_head {
           font-size: 5rem;
           font-family: "Kudryashev Headline Sans Web";
+          margin-left: auto;
         }
       }
       .whatido_description {
@@ -165,6 +162,9 @@
       height: 2em;
       margin: 0 auto;
       fill: currentColor;
+    }
+    .nav--next {
+      bottom: 0rem;
     }
     .whatido_content_wrapper {
       display: flex;

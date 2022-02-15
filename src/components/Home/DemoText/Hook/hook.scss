@@ -1,0 +1,326 @@
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  /* Change favorite color to match images */
+  /*Green dark 190 - Green 171 - Grren Blue 200*/
+  --hue-color: 190;
+
+  /* HSL color mode */
+  --first-color: hsl(var(--hue-color), 64%, 22%);
+  --first-color-second: hsl(var(--hue-color), 64%, 22%);
+  --first-color-alt: hsl(var(--hue-color), 64%, 15%);
+  --title-color: hsl(var(--hue-color), 64%, 18%);
+  --text-color: hsl(var(--hue-color), 24%, 35%);
+  --text-color-light: hsl(var(--hue-color), 8%, 60%);
+  --input-color: hsl(var(--hue-color), 24%, 97%);
+  --body-color: hsl(var(--hue-color), 100%, 99%);
+  --white-color: #fff;
+
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Open Sans", sans-serif;
+  --title-font: "Raleway", sans-serif;
+
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  @media screen and (min-width: 968px) {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-25: 1.25rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
+  /*========== Hover overlay ==========*/
+  --img-transition: 0.3s;
+  --img-hidden: hidden;
+  --img-scale: scale(1.1);
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --first-color-second: hsl(var(--hue-color), 54%, 12%);
+  --title-color: hsl(var(--hue-color), 24%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 29%, 12%);
+
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+}
+.discover {
+  &__card {
+    position: relative;
+    width: 200px;
+    background-color: brown;
+    overflow: var(--img-hidden);
+  }
+  &__data {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+  }
+  &__title,
+  &__description {
+    color: var(--white-color);
+  }
+  &__title {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-25);
+  }
+  &__description {
+    display: block;
+    font-size: var(--smaller-font-size);
+  }
+  &__img {
+    width: 100%;
+    transition: var(--img-transition);
+    object-fit: contain;
+
+    &:hover {
+      transform: var(--img-scale);
+    }
+  }
+}
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+
+.home_questionhook_wrapper {
+  margin-top: 5rem;
+  position: absolute;
+  top: 25vh;
+  left: -12vw;
+  right: auto;
+  bottom: auto;
+  height: 60%;
+  transform: translateY(-0%);
+  width: 120vw;
+  gap: 1rem;
+  color: blanchedalmond;
+  .hook_row {
+    gap: 3rem;
+    display: flex;
+    margin: 2rem;
+    align-items: center;
+    width: 100%;
+    .hook2,
+    .hook3,
+    .hook6 {
+      -webkit-text-stroke: 1px rgb(255, 255, 255);
+      font-family: Arial, Helvetica, sans-serif !important;
+      color: transparent;
+      font-weight: bolder;
+    }
+    .hook1:hover,
+    .hook2:hover,
+    .hook3:hover,
+    .hook4:hover,
+    .hook5:hover,
+    .hook6:hover {
+      opacity: 0.4;
+    }
+    .question_hook {
+      stroke: #383737;
+      stroke-width: 6;
+      font-size: 5rem;
+
+      stroke-width: 9px;
+      flex-wrap: nowrap;
+      display: flex;
+      text-transform: uppercase;
+      font-family: "Kudryashev Headline Sans Web";
+      font-weight: bolder;
+      position: relative;
+      .img_hook_responsive {
+        display: none;
+      }
+    }
+  }
+}
+@media (max-width: 1450px) {
+  .discover {
+    &__card {
+      width: 237px;
+    }
+    &__container {
+      width: 700px;
+    }
+    &__data {
+      left: 1.5rem;
+      bottom: 2rem;
+    }
+    &__title {
+      font-size: var(--h2-font-size);
+    }
+  }
+
+  .home_questionhook_wrapper {
+    margin-top: 5rem;
+    position: absolute;
+    inset: 20% 0 0 -5% !important;
+    transform: translateX(-100px);
+    width: 110vw;
+    gap: 1rem;
+
+    .hook_row {
+      gap: 2rem;
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      .question_hook {
+        font-size: 3rem !important;
+
+        .hook_img {
+          inset: -190px 0 0 130px;
+          height: 400px;
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .discover {
+    &__container {
+      width: 610px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .discover__container,
+  .place__container {
+    padding-top: 2rem;
+  }
+
+  .home_questionhook_wrapper {
+    margin-top: 0rem !important;
+    position: relative !important;
+    transform: translateX(30px) !important;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    height: 100%;
+    width: auto !important;
+    gap: 2rem !important;
+
+    .hook_row {
+      gap: 2rem !important;
+      transform: translateY(0px);
+      margin: auto !important;
+      display: flex;
+      width: auto !important;
+      flex: 1 0 100%;
+      .question_hook {
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-blend-mode: darken;
+        font-size: 1.8rem !important;
+        height: 70vh;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        width: 70vw;
+        margin: 1rem;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: relative;
+        .img_hook_responsive {
+          object-fit: contain;
+          margin: auto;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 650px) {
+  .home_questionhook_wrapper {
+    margin-top: 0rem !important;
+    text-align: center;
+    height: auto !important;
+    justify-content: center;
+    inset: 20% 0 0 -1% !important;
+    gap: 1rem;
+    .hook_row {
+      gap: 1rem !important;
+
+      .question_hook {
+        font-size: 1.2rem !important;
+        .hook_img {
+          inset: -60px 0 0 50px !important;
+          height: 200px !important;
+          width: 200px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .question_hook {
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-blend-mode: darken;
+    font-size: 1.8rem !important;
+    height: 50vh !important;
+    margin: auto;
+    display: flex;
+    width: 70vw;
+    margin: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    .img_hook_responsive {
+      object-fit: contain;
+      margin: auto;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

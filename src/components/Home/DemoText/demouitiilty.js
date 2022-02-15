@@ -6,6 +6,40 @@ export const mousemove = (e, hookcontainer, hookimg) => {
   hookcontainer.current.style.transform = `translateY(${yAxisbox}px) translateX(${xAxisbox}px)`;
   hookimg.current.style.transform = `translateY(${-yAxisimg}px) translateX(${-xAxisimg}px)`;
 };
+
+export const locoScrollTrigger = (imag, isTablet, lscroll) => {
+  let trigger;
+  let imgtrigger;
+  const parentContainer = document.querySelector(".home");
+  imag.current.style.transform = "rotate(45deg)";
+  !isTablet &&
+    lscroll.on("call", (fun, dir, obj) => {
+      [...parentContainer.querySelectorAll(".recentp_img")].forEach((el) => {
+        const img = el.querySelector(".effect-apollo");
+        if (fun === el.getAttribute("data-scroll-call")) {
+          imgtrigger = img;
+        }
+        if (fun === imag.current.getAttribute("data-scroll-call")) {
+          trigger = imag.current;
+        }
+      });
+    });
+  !isTablet &&
+    lscroll.on("scroll", (obj) => {
+      let target = 45 - obj.scroll.y / 45;
+      if (trigger) {
+        if (target <= 0) {
+          trigger.style.transform = `rotate(${0}deg)`;
+        } else {
+          trigger.style.transform = `rotate(${45 - obj.scroll.y / 45}deg)`;
+        }
+        if (imgtrigger) {
+          imgtrigger.style.height = `100%`;
+        }
+      }
+    });
+};
+
 export const btnmove = (e, el) => {
   let xAxisbox = (window.innerWidth / 2 - e.pageX) / 4;
   let yAxisbox = (window.innerHeight / 2 - e.pageY) / 10;
@@ -32,6 +66,26 @@ export const scroll = (e, bubble, box) => {
   bubble.style.pointerEvents = "none";
   bubble.style.opacity = `${2 - scrollPosition / 22}`;
 };
+
+export const hoverImgs = (setimageIndex, hookcontainer, hookimg) => {
+  Array.from(hookcontainer.current.querySelectorAll(".question_hook")).forEach(
+    (img, i) => {
+      const hoverimg = hookimg.current.querySelector(`.img${i + 1}`);
+      hoverimg.style.opacity = "0";
+      img.addEventListener("mouseenter", () => {
+        hoverimg.style.opacity = "1";
+        setimageIndex(i);
+      });
+      img.addEventListener("mousemove", () => {
+        hoverimg.style.opacity = "1";
+      });
+      img.addEventListener("mouseleave", () => {
+        hoverimg.style.opacity = "0";
+      });
+    }
+  );
+};
+
 export const clamp = (num, min, max) =>
   num <= min ? min : num >= max ? max : num;
 
