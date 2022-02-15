@@ -13,7 +13,8 @@ function Aboutuswrapper() {
           <div className="availability">
             <ul>
               <li>
-                <span>Available</span> for freelance work.
+                <span>Available</span> for freelance or <span>Full-time</span>{" "}
+                job.
               </li>
             </ul>
           </div>

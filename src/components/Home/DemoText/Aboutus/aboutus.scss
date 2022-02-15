@@ -233,9 +233,14 @@
 }
 @media (max-width: 1100px) {
   .aboutus_text {
-    font-size: 5.5rem !important;
+    font-size: 5.5rem;
     span {
-      padding-bottom: 0rem !important;
+      padding-bottom: 0rem;
     }
+  }
+}
+@media (max-width: 800px) {
+  .aboutus_text {
+    font-size: 4.5rem;
   }
 }

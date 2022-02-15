@@ -1,80 +1,119 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
 import { EffectCoverflow } from "swiper";
-
-// Import Swiper styles
 import "swiper/swiper.scss";
 import "swiper/modules/effect-coverflow/effect-coverflow.scss";
-// import "../hook.scss";
-function Swipe({ imgArray }) {
-  React.useEffect(() => {
-    // let swiper = new Swipe(".discover__container", {
-    //   effect: "coverflow",
-    //   grabCursor: true,
-    //   centeredSlides: true,
-    //   slidesPerView: "auto",
-    //   loop: true,
-    //   spaceBetween: 32,
-    //   coverflowEffect: {
-    //     rotate: 0,
-    //   },
-    // });
-  }, []);
+function Swipe({ imgArray, showMobileinfoCard }) {
   return (
     <section class="discover section" id="discover">
-      {/* <h2 class="section__title">
-          Discover the most <br />
-          attractive places
-        </h2> */}
+      <div className="swipe">Swipe</div>
       <Swiper
-        // slidesPerView="auto"
+        slidesPerView={1}
         centeredSlides={true}
-        // spaceBetween={30}
+        spaceBetween={10}
         grabCursor={true}
         loop={true}
         coverflowEffect={{
           rotate: 0,
         }}
         modules={[EffectCoverflow]}
-        class="discover__container"
-      />
+        class="discover__container container swiper-container"
+      >
+        <div class="swiper-wrapper">
+          <SwiperSlide class="discover__card swiper-slide">
+            <img
+              onClick={showMobileinfoCard}
+              src={imgArray[0]}
+              alt=""
+              class="discover__img img1"
+            />
+            <div class="discover__data">
+              <h2 class="discover__title">Dont have a website</h2>
+              <span class="discover__description">lets Collaborate</span>
+            </div>
+          </SwiperSlide>
 
-      {/* <div class="swiper-wrapper"> */}
-      <SwiperSlide class="discover__card swiper-slide">
-        {/* <img src={imgArray[0]} alt="" class="discover__img" /> */}
-        {/* <div class="discover__data"> */}
-        <h2 class="discover__title">Bali</h2>
-        <span class="discover__description">24 tours available</span>
-        {/* </div> */}
-      </SwiperSlide>
+          <SwiperSlide class="discover__card swiper-slide">
+            <img
+              onClick={showMobileinfoCard}
+              src={imgArray[1]}
+              alt=""
+              class="discover__img img2"
+            />
 
-      <SwiperSlide class="discover__card swiper-slide">
-        {/* <img src={imgArray[1]} alt="" class="discover__img" /> */}
-        {/* <div class="discover__data"> */}
-        <h2 class="discover__title">Hawaii</h2>
-        <span class="discover__description">15 tours available</span>
-        {/* </div> */}
-      </SwiperSlide>
+            <div class="discover__data">
+              <h2 class="discover__title"> I have only an idea</h2>
+              <span class="discover__description">lets Collaborate</span>
+            </div>
+          </SwiperSlide>
 
-      <SwiperSlide class="discover__card swiper-slide">
-        {/* <img src={imgArray[2]} alt="" class="discover__img" /> */}
-        {/* <div class="discover__data"> */}
-        <h2 class="discover__title">Hvar</h2>
-        <span class="discover__description">18 tours available</span>
-        {/* </div> */}
-      </SwiperSlide>
+          <SwiperSlide class="discover__card swiper-slide">
+            <img
+              onClick={showMobileinfoCard}
+              src={imgArray[2]}
+              alt=""
+              class="discover__img img3"
+            />
 
-      <SwiperSlide class="discover__card swiper-slide">
-        {/* <img src={imgArray[3]} alt="" class="discover__img" /> */}
-        {/* <div class="discover__data"> */}
-        <h2 class="discover__title">Whitehaven</h2>
-        <span class="discover__description">32 tours available</span>
-        {/* </div> */}
-      </SwiperSlide>
-      {/* </div> */}
-      <Swiper />
+            <div class="discover__data">
+              <h2 class="discover__title"> I want to scale</h2>
+              <span class="discover__description">lets Collaborate</span>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide class="discover__card swiper-slide">
+            <img
+              onClick={showMobileinfoCard}
+              src={imgArray[3]}
+              alt=""
+              class="discover__img img4"
+            />
+
+            <div class="discover__data">
+              <h2 class="discover__title">I need a commited worker</h2>
+              <span class="discover__description">lets Collaborate</span>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide class="discover__card swiper-slide">
+            <img
+              onClick={showMobileinfoCard}
+              src={imgArray[4]}
+              alt=""
+              class="discover__img img5"
+            />
+
+            <div class="discover__data">
+              <h2 class="discover__title"> I need more free time</h2>
+              <span class="discover__description">lets Collaborate</span>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide class="discover__card swiper-slide">
+            <img
+              onClick={showMobileinfoCard}
+              src={imgArray[5]}
+              alt=""
+              class="discover__img img6"
+            />
+
+            <div class="discover__data">
+              <h2 class="discover__title">I want a service</h2>
+              <span class="discover__description">lets Collaborate</span>
+            </div>
+          </SwiperSlide>
+        </div>
+      </Swiper>
     </section>
   );
 }
 
 export default Swipe;
+// effect="coverflow"
+// slidesPerView="auto"
+// centeredSlides={true}
+// spaceBetween={30}
+// grabCursor={true}
+// loop={true}
+// coverflowEffect={{
+//   rotate: 0,
+// }}
+// modules={[EffectCoverflow]}

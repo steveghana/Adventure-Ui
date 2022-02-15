@@ -1,15 +1,18 @@
 import React from "react";
 import "./hook.scss";
-import img1 from "../images/pexels-mikael-blomkvist-6476798.jpg";
-import img2 from "../images/pexels-shvets-production-7203724.jpg";
-import img3 from "../images/pexels-sora-shimazaki-5669619.jpg";
-import img4 from "../images/pexels-fauxels-3183188.jpg";
+import img1 from "../images/Optimized-pexels-mikael-blomkvist-6476798.jpg";
+import img2 from "../images/Optimized-pexels-shvets-production-7203724.jpg";
+import img3 from "../images/Optimized-pexels-sora-shimazaki-5669619.jpg";
+import img4 from "../images/Optimized-pexels-fauxels-3183188.jpg";
 import img5 from "../images/pexels-karolina-grabowska-5632331.jpg";
-import img6 from "../images/pexels-cottonbro-5483070.jpg";
+import img6 from "../images/Optimized-pexels-cottonbro-5483070 (1).jpg";
 import Swipe from "./mobileSwiper/Swiper";
-function Hook({ hookcontainer, isTablet, showinfoCard }) {
+function Hook({ hookcontainer, isTablet, showinfoCard, showMobileinfoCard }) {
   const imgArray = [img1, img2, img3, img4, img5, img6];
-  if (isTablet) return <Swipe imgArray={imgArray} />;
+  if (isTablet)
+    return (
+      <Swipe imgArray={imgArray} showMobileinfoCard={showMobileinfoCard} />
+    );
   else
     return (
       <div ref={hookcontainer} className="home_questionhook_wrapper">

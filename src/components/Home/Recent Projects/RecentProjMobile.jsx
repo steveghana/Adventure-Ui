@@ -1,10 +1,15 @@
 import React from "react";
-import Chatapp from "./light.jpg";
+import { useMediaQuery } from "@material-ui/core";
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
+import { EffectCoverflow } from "swiper";
+import "swiper/swiper.scss";
+import "swiper/modules/effect-coverflow/effect-coverflow.scss";
+import Chatapp from "./light.PNG";
 import crypto from "./pexels-pixabay-315788.jpg";
-import ark from "./pexels-mnz-1598505.jpg";
+// import ark from "./pexels-mnz-1598505.jpg";
 import { ArrowRightAlt } from "@material-ui/icons";
 import "./recent.scss";
-function RecentProjects() {
+function RecentProjMobile() {
   return (
     <div data-scroll-section="" className="recentp_container">
       <div className="recentp_slide">
@@ -77,7 +82,7 @@ function RecentProjects() {
             >
               <div className="grid">
                 <figure className="effect-apollo">
-                  <img src={ark} alt="img22" />
+                  {/* <img src={ark} alt="img22" /> */}
                   <figcaption>
                     <h2>
                       Ark <span>Shop</span>
@@ -183,4 +188,4 @@ function RecentProjects() {
   );
 }
 
-export default RecentProjects;
+export default RecentProjMobile;

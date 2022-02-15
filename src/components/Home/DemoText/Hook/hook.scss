@@ -1,88 +1,13 @@
-:root {
-  --header-height: 3rem;
-
-  /*========== Colors ==========*/
-  /* Change favorite color to match images */
-  /*Green dark 190 - Green 171 - Grren Blue 200*/
-  --hue-color: 190;
-
-  /* HSL color mode */
-  --first-color: hsl(var(--hue-color), 64%, 22%);
-  --first-color-second: hsl(var(--hue-color), 64%, 22%);
-  --first-color-alt: hsl(var(--hue-color), 64%, 15%);
-  --title-color: hsl(var(--hue-color), 64%, 18%);
-  --text-color: hsl(var(--hue-color), 24%, 35%);
-  --text-color-light: hsl(var(--hue-color), 8%, 60%);
-  --input-color: hsl(var(--hue-color), 24%, 97%);
-  --body-color: hsl(var(--hue-color), 100%, 99%);
-  --white-color: #fff;
-
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
-
-  /*========== Font and typography ==========*/
-  --body-font: "Open Sans", sans-serif;
-  --title-font: "Raleway", sans-serif;
-
-  --biggest-font-size: 2.5rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
-
-  @media screen and (min-width: 968px) {
-    --biggest-font-size: 4rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.75rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
-    --smaller-font-size: 0.813rem;
-  }
-
-  /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
-
-  /*========== Margenes Bottom ==========*/
-  --mb-0-25: 0.25rem;
-  --mb-0-5: 0.5rem;
-  --mb-0-75: 0.75rem;
-  --mb-1: 1rem;
-  --mb-1-25: 1.25rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
-
-  /*========== Hover overlay ==========*/
-  --img-transition: 0.3s;
-  --img-hidden: hidden;
-  --img-scale: scale(1.1);
-}
-
-/*========== Variables Dark theme ==========*/
-body.dark-theme {
-  --first-color-second: hsl(var(--hue-color), 54%, 12%);
-  --title-color: hsl(var(--hue-color), 24%, 95%);
-  --text-color: hsl(var(--hue-color), 8%, 75%);
-  --input-color: hsl(var(--hue-color), 29%, 16%);
-  --body-color: hsl(var(--hue-color), 29%, 12%);
-
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
-}
 .discover {
+  transform: translateX(20vw);
+  .swipe {
+    text-align: center;
+    transform: translateY(-30px) translateX(-30px);
+    width: 100%;
+  }
   &__card {
     position: relative;
-    width: 200px;
-    background-color: brown;
-    overflow: var(--img-hidden);
+    background-color: rgb(251, 122, 0);
   }
   &__data {
     position: absolute;
@@ -94,7 +19,8 @@ body.dark-theme {
     color: var(--white-color);
   }
   &__title {
-    font-size: var(--h3-font-size);
+    font-size: 2rem;
+    width: 69%;
     margin-bottom: var(--mb-0-25);
   }
   &__description {
@@ -102,16 +28,17 @@ body.dark-theme {
     font-size: var(--smaller-font-size);
   }
   &__img {
-    width: 100%;
     transition: var(--img-transition);
-    object-fit: contain;
-
+    mix-blend-mode: difference;
     &:hover {
       transform: var(--img-scale);
     }
   }
 }
-
+.discover__container,
+.place__container {
+  padding-top: 2rem;
+}
 .swiper-container-3d .swiper-slide-shadow-left,
 .swiper-container-3d .swiper-slide-shadow-right {
   background-image: none;
@@ -121,7 +48,7 @@ body.dark-theme {
   margin-top: 5rem;
   position: absolute;
   top: 25vh;
-  left: -12vw;
+  left: -10vw;
   right: auto;
   bottom: auto;
   height: 60%;
@@ -181,9 +108,6 @@ body.dark-theme {
       left: 1.5rem;
       bottom: 2rem;
     }
-    &__title {
-      font-size: var(--h2-font-size);
-    }
   }
 
   .home_questionhook_wrapper {
@@ -213,12 +137,12 @@ body.dark-theme {
     }
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 830px) {
   .discover {
-    &__container {
-      width: 610px;
-      margin-left: auto;
-      margin-right: auto;
+    transform: translateX(17vw) translateY(5vh);
+    &__img {
+      width: 60%;
+      height: 60%;
     }
   }
 
@@ -275,7 +199,15 @@ body.dark-theme {
     }
   }
 }
+
 @media (max-width: 650px) {
+  .discover {
+    transform: translateX(17vw) translateY(10vh);
+    &__img {
+      width: 70%;
+      height: 70%;
+    }
+  }
   .home_questionhook_wrapper {
     margin-top: 0rem !important;
     text-align: center;
@@ -297,8 +229,19 @@ body.dark-theme {
     }
   }
 }
-
-@media (max-width: 400px) {
+@media (max-width: 550px) {
+  .discover {
+    transform: translateX(15vw) translateY(17vh);
+  }
+}
+@media (max-width: 450px) {
+  .discover {
+    transform: translateX(8vw) translateY(8vh);
+    &__img {
+      width: 80%;
+      height: 100%;
+    }
+  }
   .question_hook {
     background-position: center;
     background-repeat: no-repeat;
@@ -321,6 +264,16 @@ body.dark-theme {
       z-index: -1;
       width: 100%;
       height: 100%;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .discover {
+    transform: translateX(5vw) translateY(-5vh);
+    &__img {
+      width: 90%;
+      height: 90%;
     }
   }
 }

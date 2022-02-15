@@ -316,7 +316,10 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 830px) {
+  .home_third_section_text_wrapper {
+    margin-top: 7rem !important;
+  }
   .letstalk_text_wrapper {
     margin-top: 6rem !important;
     flex-direction: column !important;
@@ -327,7 +330,7 @@
     gap: 1rem;
     .chat_icon {
       width: auto;
-      transform: translateY(69px);
+      transform: translateY(100px);
       height: auto;
       img {
         width: 100px !important;
@@ -348,6 +351,9 @@
 }
 
 @media (max-width: 650px) {
+  .home_third_section_text_wrapper {
+    // margin-top: -10rem !important;
+  }
   .footer_links {
     padding: 1rem;
     align-items: center;
@@ -366,15 +372,22 @@
     }
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .home_third_section_text_wrapper {
-    margin-top: 11.5rem !important;
+    margin-top: 7rem !important;
     width: 100% !important;
     text-align: center;
     font-size: 1rem;
     :first-child {
       font-size: 1.4rem;
       // transform: translateY(50px);
+    }
+  }
+}
+@media (max-width: 360px) {
+  .letstalk_text_wrapper {
+    .chat_icon {
+      transform: translateY(20px);
     }
   }
 }

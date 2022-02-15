@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "@material-ui/core";
-import IMG from "../../../assets/arkblack.PNG";
+import IMG from "../../../assets/arkblack.jpg";
 import { Hook, Card } from "./exports";
 import {
   mouseenter,
@@ -12,12 +12,12 @@ import {
   locoScrollTrigger,
 } from "./demouitiilty";
 import LocomotiveScroll from "locomotive-scroll";
-import img1 from "./images/pexels-mikael-blomkvist-6476798.jpg";
-import img2 from "./images/pexels-shvets-production-7203724.jpg";
-import img3 from "./images/pexels-sora-shimazaki-5669619.jpg";
-import img4 from "./images/pexels-fauxels-3183188.jpg";
+import img1 from "./images/Optimized-pexels-mikael-blomkvist-6476798.jpg";
+import img2 from "./images/Optimized-pexels-shvets-production-7203724.jpg";
+import img3 from "./images/Optimized-pexels-sora-shimazaki-5669619.jpg";
+import img4 from "./images/Optimized-pexels-fauxels-3183188.jpg";
 import img5 from "./images/pexels-karolina-grabowska-5632331.jpg";
-import img6 from "./images/pexels-cottonbro-5483070.jpg";
+import img6 from "./images/Optimized-pexels-cottonbro-5483070 (1).jpg";
 import { hoverCardData, hoverImgs } from "./demouitiilty";
 import IntroImg from "./Introimg/IntroImg";
 import Introsection from "./IntroSection/Introsection";
@@ -34,7 +34,7 @@ function Demotext() {
     img: "",
     cardDescription: "",
   });
-  const isTablet = useMediaQuery("(max-width:800px)");
+  const isTablet = useMediaQuery("(max-width:830px)");
   useEffect(() => {
     const lscroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
@@ -49,6 +49,19 @@ function Demotext() {
     locoScrollTrigger(imag, isTablet, lscroll);
     !isTablet && hoverImgs(setimageIndex, hookcontainer, hookimg);
   }, []);
+  const showMobileinfoCard = (e) => {
+    let card = document.querySelector(".question_card_container");
+    card.style.display = "flex";
+    let hoverContainer = document.querySelector(".discover");
+    const index = e.target.classList[1].split("img")[1];
+    let description = hoverCardData[index - 1];
+    setcardImg({
+      ...cardImg,
+      hoverContainer,
+      cardDescription: description,
+    });
+    hoverContainer.style.pointerEvents = "none";
+  };
 
   const showinfoCard = (e) => {
     let card = document.querySelector(".question_card_container");
@@ -171,6 +184,7 @@ function Demotext() {
               hookcontainer={hookcontainer}
               isTablet={isTablet}
               showinfoCard={showinfoCard}
+              showMobileinfoCard={showMobileinfoCard}
             />
           </div>
         </section>

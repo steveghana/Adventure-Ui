@@ -105,10 +105,19 @@ function App() {
             <div className="project_content content--fixed">
               <div className="content__inner">
                 <Switch>
-                  <Route path="/categories">{/* <Projects /> */}</Route>
-                  <Route path="/allprojects">{/* <Allprojects /> */}</Route>
+                  <Route path="/categories">
+                    {" "}
+                    <Projects />{" "}
+                  </Route>
+                  <Route path="/allprojects">
+                    {" "}
+                    <Allprojects />{" "}
+                  </Route>
 
-                  <Route path="/contactInfo">{/* <Contact /> */}</Route>
+                  <Route path="/contactInfo">
+                    {" "}
+                    <Contact />{" "}
+                  </Route>
                 </Switch>
               </div>
             </div>
