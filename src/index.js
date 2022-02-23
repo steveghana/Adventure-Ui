@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDom from "react-dom";
-import App from "./components/App";
-import { BrowserRouter as Router } from "react-router-dom";
-import "./font/Gothic/Century Gothic.ttf";
-import "./font/Kudryashev Headline Sans Web/Kudryashev Headline Sans Web.ttf";
+import Fullapp from "./components/FullApp";
+import "./css/_main.scss";
 ReactDom.render(
-  <Router>
-    <App />
-  </Router>,
+  <React.StrictMode>
+    <Fullapp />
+  </React.StrictMode>,
   document.getElementById("root")
 );

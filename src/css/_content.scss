@@ -1,0 +1,293 @@
+.content-container {
+  display: flex;
+  background-color: white;
+  .content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    box-shadow: 0px 30px 3rem -7px rgba($color: #000000, $alpha: 0.3);
+    .places-box {
+      display: flex;
+      height: 70vh;
+      position: relative;
+      .destination-img {
+        position: relative;
+        object-fit: contain;
+        img {
+          width: 500px;
+          height: 1000px;
+          height: auto;
+          background-position: center;
+          margin-bottom: auto;
+          margin-left: 8rem;
+          position: relative;
+          border-radius: 5px;
+        }
+        .dot {
+          position: absolute;
+          left: 60%;
+          bottom: 45%;
+          border-radius: 100%;
+          color: rgb(255, 255, 255);
+          border: 3px solid rgb(255, 255, 255);
+          text-align: center;
+          font-weight: 700;
+        }
+      }
+      .destination-img::before {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        background-color: red;
+        left: 65%;
+        bottom: 0%;
+        border-radius: 5px;
+        top: 15%;
+      }
+      .about-destination {
+        position: absolute;
+        border-radius: 5px;
+        display: flex;
+        bottom: 5%;
+        right: 10%;
+        gap: 1rem;
+        z-index: 2;
+        justify-content: flex-start;
+        flex-direction: column;
+        color: white;
+        width: 30%;
+        background-color: rgb(46, 44, 44);
+        .date {
+          margin-top: 2rem;
+        }
+        .date,
+        .description,
+        .readmore {
+          font-size: 10px;
+          padding: 1rem 3rem 0 2rem;
+        }
+        .date,
+        .readmore a {
+          color: burlywood;
+          text-decoration: none;
+        }
+        .destination-name {
+          padding: 0 2rem;
+          font-family: "Kudryashev Headline Sans Web";
+          letter-spacing: 3px;
+        }
+        .destination-slidebtn {
+          display: flex;
+          justify-content: center;
+          .slidebtn-left,
+          .slidebtn-right {
+            padding: 0.75rem 3rem;
+            color: burlywood;
+            width: 100%;
+            transition: all 200ms ease-out;
+          }
+          .slidebtn-left:hover,
+          .slidebtn-right:hover {
+            background-color: black;
+          }
+        }
+      }
+    }
+    .second-section-header,
+    .third-section-header {
+      font-size: 4rem;
+      font-weight: bolder;
+      margin: auto;
+      padding: 3rem;
+      letter-spacing: 3px;
+      font-family: "Kudryashev Headline Sans Web";
+    }
+    .project-images {
+      display: flex;
+      align-self: center;
+      justify-content: space-between;
+      width: auto;
+      height: 71vh;
+      margin-top: auto;
+      .image-content2 {
+        align-self: flex-start;
+        img {
+          margin-top: 2rem;
+        }
+      }
+      .image-content3 {
+        align-self: center;
+      }
+      .image-content1,
+      .image-content2,
+      .image-content3 {
+        justify-content: center;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        img {
+          border-radius: 5px;
+        }
+        .climbing,
+        .safari,
+        .skydiving {
+          position: relative;
+          z-index: 1;
+          margin-bottom: 1rem;
+        }
+        .climbing::before,
+        .safari::before,
+        .skydiving::before {
+          content: "";
+          width: 60%;
+          height: 50%;
+          position: absolute;
+          left: 0%;
+          top: 40%;
+          bottom: 0%;
+          z-index: -1;
+        }
+        .climbing::before {
+          background-color: #9fcced;
+        }
+        .safari::before {
+          background-color: #f7e7c2;
+        }
+        .skydiving::before {
+          background-color: #95a8c0;
+        }
+        .climbing-link a,
+        .safari-link a,
+        .diving-link a {
+          font-size: 0.86rem;
+        }
+        .climbing-link a {
+          color: #9fcced;
+        }
+        .safari-link a {
+          color: #fdd365;
+        }
+        .diving-link a {
+          color: #5e81a9;
+        }
+        img {
+          display: flex;
+          width: 200px;
+          height: 230px;
+        }
+        p {
+          font-size: 11px;
+          margin-top: 2rem;
+        }
+      }
+    }
+    .fourthSection {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 4rem;
+      .fourthSection_header {
+        font-family: "Kudryashev Headline Sans Web";
+        font-size: 4rem;
+        font-weight: bolder;
+        padding: 3rem 0rem;
+      }
+      .fourthSection_wrapper {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: rgb(255, 255, 255);
+        gap: 2rem;
+        &::before {
+          content: "";
+          position: absolute;
+          height: 70%;
+          background-color: rgb(75, 73, 73);
+          transform: rotate(-9deg);
+          width: 300%;
+          bottom: -16%;
+          left: -40%;
+          right: 30%;
+        }
+
+        .mobile {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 350px;
+          pointer-events: none;
+          margin-top: auto;
+          border-radius: 50px;
+          background-color: rgb(28, 212, 83);
+          box-shadow: 7px 15px 25px rgba($color: #000000, $alpha: 0.12);
+          z-index: 2;
+        }
+        .aboutperson {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          align-self: flex-end;
+          margin-top: auto;
+          margin-bottom: 1rem;
+          gap: 0.5rem;
+          width: 350px;
+          border-radius: 10px;
+          padding: 2rem;
+          box-shadow: 0px 20px 2rem 0px rgba($color: #000000, $alpha: 0.2);
+          z-index: 2;
+          .image img {
+            width: 100px;
+            border-radius: 400px;
+          }
+          .person-name {
+            font-size: 1rem;
+            font-weight: bold;
+          }
+          .job-description {
+            font-weight: 100;
+          }
+          .number {
+            font-family: "poppins";
+            color: yellowgreen;
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+          }
+          p {
+            font-size: 11px;
+            padding: 1rem 1.5rem;
+            color: white;
+          }
+          .followme-discover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            font-size: 0.65rem;
+            color: white;
+            .follow {
+              border: 1px solid rgb(158, 154, 154);
+            }
+            .discover {
+              background-color: white;
+              color: red;
+            }
+            .follow,
+            .discover {
+              padding: 0.75rem 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

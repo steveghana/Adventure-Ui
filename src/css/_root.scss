@@ -1,0 +1,90 @@
+:root {
+  --in: #dd91a6;
+  --go: #a0c3b8;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+#root {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+h1,
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.blur {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  .leftblur {
+    background-color: #f7e7c2;
+    flex-grow: 0.5;
+  }
+  .rightblur {
+    background-color: #f7e7c2;
+    opacity: 0.98;
+    flex-grow: 0.5;
+    z-index: 2;
+  }
+  .middle {
+    flex-grow: 0.4;
+  }
+  .changingbackground {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    flex: 1 0 100%;
+    padding: 70px 4rem 0 4rem;
+    z-index: 2;
+    box-shadow: 0px -10px 3rem -7px rgba($color: #000000, $alpha: 0.2);
+    transition: background 500ms ease;
+    .changing {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      right: 0%;
+    }
+    .offscreen {
+      transform: translateX(-100%);
+    }
+  }
+  .changingbackground::after {
+    content: "";
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+  }
+  .mainsection {
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: proximity;
+    box-shadow: 0px -10px 3rem -7px rgba($color: #000000, $alpha: 0.2);
+    .firstsection {
+      display: flex;
+      position: relative;
+      flex: 1 0 78%;
+    }
+  }
+}

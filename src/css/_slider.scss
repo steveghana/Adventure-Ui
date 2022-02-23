@@ -1,0 +1,242 @@
+:root {
+  --in: #dd91a6;
+  --go: #a0c3b8;
+}
+
+.slide-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  .social-icons {
+    position: absolute;
+    bottom: 10%;
+    left: 4%;
+    width: 40px;
+    height: 50px;
+    .instagram {
+      color: #dd91a6;
+    }
+    .twitter,
+    .linkedin {
+      color: #a0c3b8;
+    }
+  }
+  @media (max-width: 530px) {
+    .text {
+      max-width: 50% !important;
+      .textheader {
+        margin: auto;
+        transform: translateX(60px);
+        font-size: 3rem !important;
+      }
+      .subtext {
+        width: 100% !important;
+        transform: translateX(60px);
+        margin: auto;
+      }
+    }
+  }
+
+  .text {
+    transform: translateX(130px);
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin: auto 0;
+    gap: 0.5rem;
+    z-index: 3;
+    color: rgb(77, 73, 73);
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    .visible {
+      opacity: 1;
+      transition: opacity 200ms ease-in-out 200ms;
+    }
+    .blurout {
+      transition: opacity 200ms ease-in-out;
+
+      opacity: 0;
+    }
+    .textheader {
+      position: relative;
+      font-size: 4.1rem;
+      line-height: 60px;
+      overflow: hidden;
+      .apollo {
+        position: absolute;
+        top: 10%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+        width: 100px;
+        height: 200%;
+        border: 30px dashed rgb(255, 254, 254);
+        transform: translateX(210px) rotate(15deg);
+        visibility: hidden;
+      }
+      .move {
+        visibility: visible;
+        transform: translateX(-150px);
+        transition: transform 400ms ease-in 200ms;
+      }
+
+      .head,
+      .subtext,
+      span {
+        font-family: "Kudryashev Headline Sans Web";
+      }
+      .head {
+        font-weight: bolder;
+        margin-right: 1rem;
+        font-size: 4.3rem;
+        letter-spacing: 8px;
+      }
+      .lighter {
+        font-weight: 800;
+        word-spacing: 8px;
+        mix-blend-mode: difference;
+      }
+    }
+    .subtext {
+      width: 70%;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-family: "Kudryashev Headline Sans Web";
+      z-index: 2;
+    }
+  }
+  @media (max-width: 530px) {
+    .container {
+      width: 100% !important;
+    }
+  }
+  .container {
+    // position: relative;
+    height: 100%;
+    right: 0%;
+    width: 50%;
+    position: absolute;
+    overflow: hidden;
+    .numcontainer {
+      overflow: hidden;
+      position: relative;
+      font-family: "Kudryashev Headline Sans Web";
+      font-weight: bolder;
+      position: absolute;
+      // top: 0%;
+      bottom: 0%;
+      right: 5%;
+      z-index: 5;
+
+      .numApollo {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+        width: 10px;
+        border: 12px dashed rgba($color: #ffffff, $alpha: 0.5);
+        transform: translateX(70px) rotate(15deg);
+      }
+      .move {
+        visibility: visible;
+        transform: translateX(-40px);
+        transition: transform 300ms ease-in 100ms;
+      }
+      .number {
+        color: white;
+        font-size: 2.5rem;
+      }
+      .visible {
+        opacity: 1;
+        transition: opacity 300ms ease-in-out 200ms;
+      }
+      .blurout {
+        opacity: 0;
+        transition: opacity 200ms ease-in-out;
+      }
+    }
+
+    .swiper-wrapper {
+      flex-direction: row;
+      height: 100%;
+      @media (max-width: 530px) {
+        .swiper-slide {
+          pointer-events: all !important;
+        }
+      }
+      .swiper-slide {
+        pointer-events: none;
+        align-items: center;
+        background: rgb(255, 255, 255);
+        .img {
+          justify-content: right;
+          height: 100%;
+          object-position: center;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+.btn1,
+.btn2 {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 2rem -2px rgba($color: #000000, $alpha: 0.29);
+  overflow: hidden;
+  position: relative;
+
+  width: 85px;
+  color: black;
+  text-align: center;
+  height: 60px;
+  transition: all 300ms ease-out;
+  display: flex;
+}
+.btn1 {
+  border-right: 1px solid black;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  // position: absolute;
+  left: 40%;
+  bottom: 35%;
+  color: transparent;
+  transition: all 300ms;
+}
+.btn2hover,
+.btn1hover {
+  position: absolute;
+  background-color: aqua;
+  width: 100%;
+  height: 100%;
+  inset: 0 0 0 0;
+  transform: translateX(-100px);
+  transition: transform 400ms ease;
+}
+.btn1:hover,
+.btn2:hover {
+  :first-child {
+    z-index: 13;
+  }
+  color: rgb(255, 255, 255);
+  .btn1hover,
+  .btn2hover {
+    transform: translateX(0px);
+  }
+}
+.slide-btns {
+  display: flex;
+  position: relative;
+  gap: 1rem;
+  bottom: 0%;
+  left: -2.3%;
+  position: absolute;
+  margin: auto;
+}
