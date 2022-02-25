@@ -30,7 +30,8 @@ h2 {
   }
   .rightblur {
     background-color: #f7e7c2;
-    opacity: 0.98;
+    // opacity: 0.58;
+    filter: blur(100px);
     flex-grow: 0.5;
     z-index: 2;
   }

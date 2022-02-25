@@ -1,11 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import climbing from "../assets/images/pexels-lachlan-ross-7084334.jpg";
-import { ArrowBack, ArrowForward } from "@material-ui/icons";
+import climbing from "../assets/images/pexels-lachlan-ross-7084334-min.jpg";
+import { MoreVert, ArrowRightAlt } from "@material-ui/icons";
 import safari from "../assets/images/pic-1.png";
-import diving from "../assets/images/pexels-russ-jani-739657 (3).jpg";
+import frame from "../assets/images/—Pngtree—mobile frame mockup design vector_5934163.Png";
+import diving from "../assets/images/pexels-russ-jani-739657 (2)-min.jpg";
 import Alaska from "../assets/images/pexels-spencer-gurley-1448055 (2).jpg";
 import Person from "../assets/images/man-1246508_1920.jpg";
+import car from "../assets/images/dc98a102f13fb67480e51be73247e546.jpg";
+import Sam from "../assets/images/user-2.png";
 const Content = () => {
   const content = useRef(null);
   useEffect(() => {
@@ -21,16 +24,36 @@ const Content = () => {
               y: "0%",
               opacity: 1,
               stagger: 0.4,
-              duration: 2,
+              duration: 1,
               ease: "power2.inOut",
             });
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
     observer.observe(content.current);
   }, []);
+  const MobileImage = ({ img, name, status, likes }) => (
+    <div className="chat_container">
+      <div className="mobile_img">
+        <img src={img} alt="" />
+      </div>
+      <div className="name-and-description">
+        <div className="name">{name}</div>
+        <div className="status">{status}</div>
+      </div>
+      <div className="emoticon">
+        <div className="horiz">
+          <MoreVert style={{ color: "gray" }} />
+        </div>
+        <div className="emoji-and-number">
+          <div className="chat_num">{likes}</div>
+          <div className="emoji">❤</div>
+        </div>
+      </div>
+    </div>
+  );
   return (
     <div ref={content} className="content-container">
       <div className="content">
@@ -96,10 +119,10 @@ const Content = () => {
             </div>
             <div className="destination-slidebtn">
               <div className="slidebtn-left">
-                <ArrowBack />
+                <ArrowRightAlt style={{ transform: "rotate(180deg)" }} />
               </div>
               <div className="slidebtn-right">
-                <ArrowForward />
+                <ArrowRightAlt />
               </div>
             </div>
           </div>
@@ -107,7 +130,26 @@ const Content = () => {
         <div className="fourthSection">
           <div className="fourthSection_header">Find Talents</div>
           <div className="fourthSection_wrapper">
-            <div className="mobile"></div>
+            <div className="mobile">
+              <div className="plus_icons">+</div>
+              <img className="car" src={car} alt="" />
+              <img src={frame} alt="" />
+              <div className="image_description">
+                <div className="subscribers">Subscribers</div>
+                <MobileImage
+                  img={Person}
+                  name={"Blake Clawford"}
+                  status={"Travelar"}
+                  likes={17}
+                />
+                <MobileImage
+                  img={Sam}
+                  name={"Sam Guttierez"}
+                  status={"Travelar"}
+                  likes={27}
+                />
+              </div>
+            </div>
             <div className="aboutperson">
               <div className="image">
                 <img src={Person} alt="person" />
@@ -115,11 +157,13 @@ const Content = () => {
               <div className="person-name">Blake Crawford</div>
               <div className="job-description">Traveler</div>
               <h1 className="number">+731</h1>
-              <p className="description-text">
-                .Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Placeat quisquam aliquid hic provident iste eaque iusto debitis
-                quos, corrupti omnis. Libero.
-              </p>
+              <ul>
+                <li className="description-text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Placeat quisquam aliquid hic provident iste eaque iusto
+                  debitis quos, corrupti omnis. Libero.
+                </li>
+              </ul>
               <div className="followme-discover">
                 <div className="follow">FOLLOW ME</div>
                 <div className="discover">DISCOVER</div>

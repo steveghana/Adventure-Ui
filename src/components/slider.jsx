@@ -12,9 +12,9 @@ import "swiper/modules/navigation/navigation.scss"; // Navigation module
 import { EffectCoverflow } from "swiper";
 import "../css/_slider.scss";
 import "swiper/modules/effect-coverflow/effect-coverflow.scss";
-import image1 from "../assets/images/pexels-andy-vu-3217911 (2).jpg";
-import image2 from "../assets/images/pexels-russ-jani-739657 (3).jpg";
-import image3 from "../assets/images/pexels-jess-vide-4321093.jpg";
+import image1 from "../assets/images/pexels-andy-vu-3217911-min.jpg";
+import image2 from "../assets/images/pexels-russ-jani-739657 (2)-min.jpg";
+import image3 from "../assets/images/pexels-jess-vide-4321093-min.jpg";
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
 
 const Slider = () => {

@@ -39,7 +39,7 @@
         position: absolute;
         width: 50%;
         height: 50%;
-        background-color: red;
+        background-color: #ff8594;
         left: 65%;
         bottom: 0%;
         border-radius: 5px;
@@ -184,7 +184,7 @@
       }
     }
     .fourthSection {
-      height: 100vh;
+      height: 120vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -194,16 +194,18 @@
         font-family: "Kudryashev Headline Sans Web";
         font-size: 4rem;
         font-weight: bolder;
-        padding: 3rem 0rem;
+        padding: 5rem 0rem;
       }
       .fourthSection_wrapper {
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        height: 100%;
         position: relative;
+        gap: 1rem;
         background-color: rgb(255, 255, 255);
-        gap: 2rem;
         &::before {
           content: "";
           position: absolute;
@@ -211,7 +213,7 @@
           background-color: rgb(75, 73, 73);
           transform: rotate(-9deg);
           width: 300%;
-          bottom: -16%;
+          bottom: -19%;
           left: -40%;
           right: 30%;
         }
@@ -220,13 +222,108 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-          width: 350px;
+          width: 430px;
+          height: 750px;
           pointer-events: none;
+          position: relative;
           margin-top: auto;
           border-radius: 50px;
-          background-color: rgb(28, 212, 83);
           box-shadow: 7px 15px 25px rgba($color: #000000, $alpha: 0.12);
-          z-index: 2;
+          .plus_icons {
+            position: absolute;
+            font-size: 3.5rem;
+            font-weight: lighter;
+            font-family: "Courier New", Courier, monospace;
+            right: 15%;
+            transform: translateY(50px);
+            top: auto;
+            bottom: auto;
+            padding: 0rem 1rem;
+            border-radius: 50%;
+            color: #83c8b2;
+            z-index: 332;
+            background-color: #ffffff;
+          }
+          .image_description {
+            height: 35%;
+            width: 85%;
+            position: absolute;
+            bottom: 2%;
+            left: 8%;
+            right: 0%;
+            display: flex;
+            padding: 1rem 2rem;
+            flex-direction: column;
+
+            justify-content: space-evenly;
+            background-color: white;
+            border-bottom-left-radius: 70px;
+            border-bottom-right-radius: 70px;
+            .chat_container {
+              display: flex;
+              width: 100%;
+              align-items: center;
+              gap: 1rem;
+              margin-bottom: 1rem;
+              .mobile_img {
+                width: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                background-color: black;
+                border-radius: 50%;
+                overflow: hidden;
+                position: relative;
+              }
+              .mobile_img img {
+                margin: auto;
+                background-color: #fdd365;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                transform: translateX(9px);
+                object-fit: cover;
+              }
+              .name-and-description {
+                margin-right: auto;
+                .status {
+                  font-size: 0.74rem;
+                  color: rgb(121, 121, 121);
+                }
+              }
+              .emoticon {
+                text-align: right;
+                .emoji-and-number {
+                  color: rgb(121, 121, 121);
+                  display: flex;
+                  gap: 0.2rem;
+                }
+              }
+            }
+          }
+          .car {
+            width: 85%;
+            object-fit: contain;
+            height: 70%;
+            top: -1%;
+            right: 5%;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            left: 0%;
+            position: absolute;
+            margin: auto;
+          }
+          img {
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            left: -17%;
+            transform: translateX(15px);
+            top: -0px;
+            object-fit: cover;
+            // position: absolute;
+          }
         }
         .aboutperson {
           display: flex;
@@ -242,9 +339,18 @@
           padding: 2rem;
           box-shadow: 0px 20px 2rem 0px rgba($color: #000000, $alpha: 0.2);
           z-index: 2;
-          .image img {
+          .image {
+            border-radius: 50%;
+            overflow: hidden;
+
             width: 100px;
-            border-radius: 400px;
+            height: 100px;
+            background-color: #000000;
+          }
+          .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
           .person-name {
             font-size: 1rem;
@@ -255,16 +361,20 @@
           }
           .number {
             font-family: "poppins";
-            color: yellowgreen;
-            font-size: 4rem;
+            color: #83c8b2;
+            font-size: 4.5rem;
             font-weight: 600;
             margin-bottom: 2rem;
             text-align: center;
           }
-          p {
-            font-size: 11px;
+          ul {
             padding: 1rem 1.5rem;
-            color: white;
+            list-style-type: disc;
+            li {
+              font-size: 12px;
+              letter-spacing: 1px;
+              color: rgb(219, 219, 219);
+            }
           }
           .followme-discover {
             display: flex;
@@ -272,6 +382,7 @@
             justify-content: center;
             width: 100%;
             text-align: center;
+            gap: 1.5rem;
             font-size: 0.65rem;
             color: white;
             .follow {
@@ -283,6 +394,7 @@
             }
             .follow,
             .discover {
+              cursor: pointer;
               padding: 0.75rem 2rem;
             }
           }
